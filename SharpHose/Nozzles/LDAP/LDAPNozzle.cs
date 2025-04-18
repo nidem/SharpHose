@@ -284,7 +284,7 @@ namespace SharpHose.Nozzles.LDAP
             {
                 using (var context = GetPrincipalContext())
                 {
-                    return context.ValidateCredentials(username, password);
+                    return context.ValidateCredentials(username, password, ContextOptions.Negotiate | ContextOptions.Signing | ContextOptions.Sealing);
                 }
             });
         }
